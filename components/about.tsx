@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { WaterfallDialog } from "@/components/waterfall-dialog";
 
 export function About() {
   return (
@@ -10,19 +10,7 @@ export function About() {
           <p className="about-lead" data-reveal="rise">I enjoy solving real business problems by building scalable backend systems, intuitive user interfaces, and secure payment workflows.</p>
           <p data-reveal="rise">I have hands-on experience developing production-ready SaaS, CRM, LMS, and Fintech applications. I’m currently focused on Fintech platforms, AI-powered applications, payment systems, and scalable backend architectures using Next.js, NestJS, Prisma, Redis, and cloud technologies.</p>
 
-          <figure className="about-waterfall" data-reveal="rise">
-            <Image
-              src="/images/Waterfall.gif"
-              alt="Animated waterfall cascading through a rocky landscape"
-              width={624}
-              height={384}
-              sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 1000px) calc(50vw - 52px), 540px"
-              unoptimized
-            />
-            <figcaption className="eyebrow">
-              <span>A reminder to stay curious and trust the process.</span>
-            </figcaption>
-          </figure>
+          <WaterfallDialog />
 
           <section className="strengths experience-section" aria-labelledby="experience-heading">
             <p className="eyebrow" id="experience-heading">Professional experience</p>

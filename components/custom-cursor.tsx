@@ -6,8 +6,8 @@ export function CustomCursor() {
   useEffect(() => {
     const pointer = window.matchMedia("(hover: hover) and (pointer: fine)");
     const motion = window.matchMedia("(prefers-reduced-motion: no-preference)");
-    const cursor = document.querySelector<HTMLElement>(".custom-cursor");
-    if (!cursor || !pointer.matches || !motion.matches) return;
+    const cursors = document.querySelectorAll<HTMLElement>(".custom-cursor");
+    if (cursors.length === 0 || !pointer.matches || !motion.matches) return;
 
     const root = document.documentElement;
     let frame = 0;
@@ -15,24 +15,26 @@ export function CustomCursor() {
       if (event.pointerType !== "mouse") return;
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        cursor.style.left = event.clientX + "px";
-        cursor.style.top = event.clientY + "px";
-        cursor.classList.add("is-visible");
+        cursors.forEach((cursor) => {
+          cursor.style.left = event.clientX + "px";
+          cursor.style.top = event.clientY + "px";
+          cursor.classList.add("is-visible");
+        });
       });
     };
     const over = (event: PointerEvent) => {
       const target = event.target;
       if (target instanceof Element && target.closest("a, button, summary, [role='button']")) {
-        cursor.classList.add("is-interactive");
+        cursors.forEach((cursor) => cursor.classList.add("is-interactive"));
       }
     };
     const out = (event: PointerEvent) => {
       const target = event.relatedTarget;
       if (target instanceof Element && target.closest("a, button, summary, [role='button']")) return;
-      cursor.classList.remove("is-interactive");
+      cursors.forEach((cursor) => cursor.classList.remove("is-interactive"));
     };
     const leave = () => {
-      cursor.classList.remove("is-visible", "is-interactive");
+      cursors.forEach((cursor) => cursor.classList.remove("is-visible", "is-interactive"));
     };
 
     root.classList.add("custom-cursor-enabled");
@@ -51,6 +53,12 @@ export function CustomCursor() {
     };
   }, []);
 
+  return (
+    <CustomCursorVisual />
+  );
+}
+
+export function CustomCursorVisual() {
   return (
     <div className="custom-cursor" aria-hidden="true">
       <span className="custom-cursor-ring" />
