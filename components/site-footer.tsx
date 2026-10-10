@@ -1,10 +1,11 @@
 import { ContactForm } from "@/components/contact-form";
+import { LeafMark } from "@/components/leaf-mark";
 
 export function SiteFooter() {
   return (
     <footer id="contact" className="contact-section" aria-labelledby="contact-heading">
       <div className="shell">
-        <p className="eyebrow" data-reveal>03 / Get in touch</p>
+        <p className="eyebrow section-eyebrow" data-reveal><LeafMark className="section-leaf" />03 / Get in touch</p>
         <h2 data-reveal="line" id="contact-heading">Let&apos;s Build<br />Something Great<span aria-hidden="true">↗</span></h2>
         <ContactForm />
         <div className="contact-details" data-reveal>

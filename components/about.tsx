@@ -1,9 +1,10 @@
 import { WaterfallDialog } from "@/components/waterfall-dialog";
+import { LeafMark } from "@/components/leaf-mark";
 
 export function About() {
   return (
     <section id="about" className="about-section shell" aria-labelledby="about-heading">
-      <p className="eyebrow" data-reveal>02 / Behind the work</p>
+      <p className="eyebrow section-eyebrow" data-reveal><LeafMark className="section-leaf" />02 / Behind the work</p>
       <div className="about-content">
         <h2 data-reveal="line" id="about-heading">A little<br />context<span className="accent">.</span></h2>
         <div className="about-copy">

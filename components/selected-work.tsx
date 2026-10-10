@@ -1,4 +1,5 @@
 import { ProjectRow } from "@/components/project-row";
+import { LeafMark } from "@/components/leaf-mark";
 
 const projects = [
   {
@@ -39,7 +40,7 @@ const projects = [
 export function SelectedWork() {
   return (
     <section id="work" className="work-section shell" aria-labelledby="work-heading">
-      <div className="section-heading"><p className="eyebrow" data-reveal="rule">01 / Selected work</p><h2 data-reveal="line" id="work-heading">A few things<br />I’ve built<span className="accent">.</span></h2><p className="section-note">Fintech, EdTech, and SaaS products<br />built to solve real business needs.</p></div>
+      <div className="section-heading"><p className="eyebrow section-eyebrow" data-reveal="rule"><LeafMark className="section-leaf" />01 / Selected work</p><h2 data-reveal="line" id="work-heading">A few things<br />I’ve built<span className="accent">.</span></h2><p className="section-note">Fintech, EdTech, and SaaS products<br />built to solve real business needs.</p></div>
       <div>{projects.map((project) => <ProjectRow key={project.number} {...project} />)}</div>
     </section>
   );

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { LocalClock } from "@/components/local-clock";
+import { LeafMark } from "@/components/leaf-mark";
 
 export function Introduction() {
   return (
@@ -86,7 +87,7 @@ export function Introduction() {
           </figcaption>
           <div className="hero-stamp" aria-hidden="true">
             <span>FULL STACK</span>
-            <span className="stamp-symbol">↗</span>
+            <LeafMark className="stamp-leaf" />
             <span>DEVELOPER / 01</span>
           </div>
         </figure>

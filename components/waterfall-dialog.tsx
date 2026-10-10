@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { CustomCursorVisual } from "@/components/custom-cursor";
+import { LeafMark } from "@/components/leaf-mark";
 import { useRef, type KeyboardEvent, type MouseEvent } from "react";
 
 export function WaterfallDialog() {
@@ -53,7 +54,8 @@ export function WaterfallDialog() {
           </span>
         </button>
         <figcaption className="eyebrow">
-          A reminder to stay curious and trust the process.
+          <LeafMark className="caption-leaf" />
+          <span>A reminder to stay curious and trust the process.</span>
         </figcaption>
       </figure>
 
