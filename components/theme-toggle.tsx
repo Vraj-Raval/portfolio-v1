@@ -1,8 +1,9 @@
 "use client";
+import { Within } from "@theme-toggles/react";
 import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark" | undefined>();
   useEffect(() => {
     const preference = window.matchMedia("(prefers-color-scheme: dark)");
     const sync = () => {
@@ -24,5 +25,12 @@ export function ThemeToggle() {
     setTheme(nextTheme);
     try { localStorage.setItem("portfolio-theme", nextTheme); } catch {}
   }
-  return <button type="button" className="theme-toggle" onClick={toggle} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`} aria-pressed={theme === "dark"}><svg className="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></svg><svg className="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M20 15.5A9 9 0 0 1 8.5 4a9 9 0 1 0 11.5 11.5Z" /></svg><span className="theme-label-light">Light</span><span className="theme-label-dark">Dark</span></button>;
+  return (
+    <Within
+      toggled={theme === undefined ? undefined : theme === "dark"}
+      onClick={toggle}
+      className="theme-toggle"
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+    />
+  );
 }

@@ -13,8 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vraj Raval — Full Stack Developer",
-  description: "Full Stack Developer building scalable SaaS and Fintech products.",
+  title: "Vraj Raval | Full Stack Developer",
+  description:
+    "Full Stack Developer building scalable SaaS and Fintech products.",
+  icons: {
+    icon: "/images/titleProfile.png",
+    shortcut: "/images/titleProfile.png",
+    apple: "/images/titleProfile.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -24,7 +30,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head><script dangerouslySetInnerHTML={{ __html: "(function(){var t;try{t=localStorage.getItem('portfolio-theme')}catch(e){}var d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.dataset.theme=d?'dark':'light'})()" }} /></head>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var t;try{t=localStorage.getItem('portfolio-theme')}catch(e){}var d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.dataset.theme=d?'dark':'light'})()",
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

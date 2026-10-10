@@ -1,9 +1,12 @@
+import { ContactForm } from "@/components/contact-form";
+
 export function SiteFooter() {
   return (
     <footer id="contact" className="contact-section" aria-labelledby="contact-heading">
       <div className="shell">
         <p className="eyebrow" data-reveal>03 / Get in touch</p>
         <h2 data-reveal="line" id="contact-heading">Let&apos;s Build<br />Something Great<span aria-hidden="true">↗</span></h2>
+        <ContactForm />
         <div className="contact-details" data-reveal>
           <div className="contact-copy">
             <p>Have a SaaS, Fintech, or full-stack product idea? Let&apos;s connect and discuss how I can help bring it to life.</p>
