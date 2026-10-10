@@ -1,0 +1,7 @@
+type ProjectRowProps = { number: string; title: string; description: string; };
+export function ProjectRow({ number, title, description }: ProjectRowProps) {
+  return <article className="project-row" aria-labelledby={"project-" + number}>
+    <div className="project-visual" data-reveal="mask"><div className="visual-caption"><span className="eyebrow">Project {number}</span><span className="eyebrow">Visual placeholder</span></div><div className="visual-grid" aria-hidden="true"><div className="visual-window"><div className="window-top"><span /><span /><span /></div><div className="window-content"><span className="visual-number">{number}</span><div className="wire-lines"><i /><i /><i /></div></div></div><span className="visual-cross">+</span></div><p className="visual-footnote">[Replace with a project screenshot]</p></div>
+    <div className="project-copy" data-reveal="rise"><div className="project-topline"><span className="project-number">/{number}</span><p className="eyebrow">Project placeholder</p></div><h3 id={"project-" + number}>{title}</h3><p className="project-description">{description}</p><details className="project-details"><summary>Explore project details <span className="detail-plus" aria-hidden="true">+</span></summary><div className="detail-content"><p className="project-contribution">[Your role and contribution]</p><p className="eyebrow">Built with</p><p>[Project technologies]</p><div className="project-links"><span>Live demo — pending</span><span>Source code — pending</span></div></div></details></div>
+  </article>;
+}
