@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { LocalClock } from "@/components/local-clock";
 
 export function Introduction() {
   return (
@@ -9,7 +10,11 @@ export function Introduction() {
     >
       <div className="intro-top hero-meta">
         <p className="eyebrow">Full Stack Developer</p>
-        <p className="profile-location">Vadodara, Gujarat, India</p>
+        <div className="hero-meta-side">
+          <p className="profile-location">Vadodara, Gujarat, India</p>
+          <span className="hero-meta-divider" aria-hidden="true" />
+          <LocalClock />
+        </div>
       </div>
       <div className="hero-layout">
         <div className="hero-text">
