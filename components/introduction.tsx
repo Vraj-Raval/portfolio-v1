@@ -16,14 +16,13 @@ export function Introduction() {
             </h1>
           </div>
           <div className="intro-bottom">
-            <p className="eyebrow intro-index hero-support"><span aria-hidden="true">↓</span> Building Scalable SaaS &amp; Fintech Products</p>
             <div className="intro-description">
               <p className="hero-support">Full Stack Developer building production-ready SaaS, CRM, LMS, and Fintech applications through scalable backend systems, intuitive interfaces, and secure payment workflows.</p>
               <div className="hero-actions hero-actions-enter">
-                <a className="action-link" href="#work" data-magnetic>Explore selected work <span aria-hidden="true">↘</span></a>
+                <a className="text-link" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
                 <a className="text-link" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
                 <a
-                  className="text-link resume-link"
+                  className="action-link resume-link"
                   href="https://drive.google.com/file/d/1J4gr5U1DZomy_zx4HLD-2YFb76HnKFwo/view"
                   target="_blank"
                   rel="noreferrer"
@@ -47,6 +46,10 @@ export function Introduction() {
               preload
               className="portrait-image"
             />
+            <span className="portrait-monogram" aria-hidden="true">
+              <span>VR</span>
+              <span className="portrait-monogram-caption">01 / INDIA</span>
+            </span>
           </div>
           <figcaption className="portrait-caption"><span className="eyebrow">Vraj Raval / Developer</span><span className="eyebrow">01</span></figcaption>
           <div className="hero-stamp" aria-hidden="true"><span>FULL STACK</span><span className="stamp-symbol">↗</span><span>DEVELOPER / 01</span></div>

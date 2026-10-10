@@ -1,4 +1,5 @@
 import { MotionObserver } from "@/components/motion-observer";
+import { CustomCursor } from "@/components/custom-cursor";
 import { About } from "@/components/about";
 import { Introduction } from "@/components/introduction";
 import { SelectedWork } from "@/components/selected-work";
@@ -10,6 +11,7 @@ export default function Home() {
     <div id="top">
       <a className="skip-link" href="#main">Skip to content</a>
       <MotionObserver />
+      <CustomCursor />
       <SiteHeader />
       <main id="main"><Introduction /><SelectedWork /><About /></main>
       <SiteFooter />
