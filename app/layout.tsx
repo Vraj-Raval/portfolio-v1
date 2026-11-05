@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -14,8 +14,17 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Vraj Raval | Full Stack Developer",
-  description:
-    "Full Stack Developer building scalable SaaS and Fintech products.",
+  description: "Vraj Raval is a Full Stack Developer building Fintech, SaaS, CRM, and LMS products with Next.js, NestJS, Prisma, and MySQL.",
+  openGraph: {
+    title: "Vraj Raval | Full Stack Developer",
+    description: "Selected product work across Fintech, SaaS, CRM, and LMS engineering.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Vraj Raval | Full Stack Developer",
+    description: "Selected product work across Fintech, SaaS, CRM, and LMS engineering.",
+  },
   icons: {
     icon: "/images/titleProfile.png",
     shortcut: "/images/titleProfile.png",
@@ -28,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
         <script
